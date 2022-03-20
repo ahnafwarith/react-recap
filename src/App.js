@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
   return (
@@ -8,8 +8,39 @@ function App() {
       <Person name={'JhankuSir'} job={'Teaching'}></Person>
       <Person name={'Samiha'} job={'Bebu'}></Person>
       <Person name={'Ahnaf'} job={'Developer'}></Person>
+      <Users></Users>
     </div>
   );
+}
+
+function Users() {
+  const [users, handleUsers] = useState([]);
+
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then(res => res.json())
+      .then(data => handleUsers(data))
+  }, [])
+
+  return (
+    <div>
+      <h1>Users amount: {users.length}</h1>
+      {
+        users.map(user => <User userInfo={user}></User>)
+      }
+    </div>
+  )
+};
+
+function User(props) {
+  console.log(props)
+  return (
+    <div style={{
+      backgroundColor: 'lightcyan'
+    }}>
+      <h1>ID:{props.userInfo.id}</h1><p>Name:{props.userInfo.name}</p>
+    </div>
+  )
 }
 
 const style = {
