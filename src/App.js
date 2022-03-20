@@ -26,6 +26,7 @@ function Users() {
     <div>
       <h1>Users amount: {users.length}</h1>
       {
+        /* Taking each user element individually from users data and dynamically sending */
         users.map(user => <User userInfo={user}></User>)
       }
     </div>
@@ -36,14 +37,14 @@ function User(props) {
   console.log(props)
   return (
     <div style={{
-      backgroundColor: 'lightcyan'
+      backgroundColor: 'lightcyan' /* Applying css style directly with JavaScript */
     }}>
       <h1>ID:{props.userInfo.id}</h1><p>Name:{props.userInfo.name}</p>
     </div>
   )
 }
 
-const style = {
+const style = { /* Applying style by storing the css data in a variable */
   backgroundColor: 'bisque',
   borderRadius: '20px',
   margin: '20px',
