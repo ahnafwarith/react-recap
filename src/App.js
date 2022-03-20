@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { useEffect, useState } from 'react';
 
@@ -6,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <Person name={'JhankuSir'} job={'Teaching'}></Person>
-      <Person name={'Samiha'} job={'Bebu'}></Person>
+      <Person name={'Samiha'} job={'Bebu-ing'}></Person>
       <Person name={'Ahnaf'} job={'Developer'}></Person>
       <Users></Users>
     </div>
