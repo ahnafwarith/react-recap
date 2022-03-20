@@ -4,22 +4,26 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Person name={'JhankuSir'} job={'Teaching'}></Person>
+      <Person name={'Samiha'} job={'Bebu'}></Person>
+      <Person name={'Ahnaf'} job={'Developer'}></Person>
     </div>
   );
+}
+
+const style = {
+  backgroundColor: 'yellow',
+  borderRadius: '20px',
+  margin: '20px'
+};
+
+function Person(props) {
+  return (
+    <div style={style}>
+      <h1>Name: {props.name}</h1>
+      <p>Job: {props.job}</p>
+    </div>
+  )
 }
 
 export default App;
